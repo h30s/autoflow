@@ -84,9 +84,14 @@ export function NodeConfig({ nodeId, configFields, onSave, className, ...props }
                             <select
                                 value={(formValues[field.key] as string) || ""}
                                 onChange={(e) => handleChange(field.key, e.target.value)}
-                                className="flex h-9 w-full items-center justify-between whitespace-nowrap rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1"
+                                className="flex h-9 w-full items-center justify-between whitespace-nowrap rounded-md border border-input bg-background px-3 py-2 text-sm shadow-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1"
+                                style={{ colorScheme: "dark" }}
                             >
-                                {field.options?.map((opt: string) => <option key={opt} value={opt}>{opt}</option>)}
+                                {field.options?.map((opt: string) => (
+                                    <option key={opt} value={opt} className="bg-gray-900 text-white">
+                                        {opt}
+                                    </option>
+                                ))}
                             </select>
                         )}
                     </div>
