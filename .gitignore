@@ -48,3 +48,4 @@ next-env.d.ts
 
 # agents
 .agents/
+AutoFlow_Blueprint.md
